@@ -29,6 +29,7 @@ lock: deps compile
 	$(REBAR) lock-deps
 
 locked-all: locked-deps compile
+	$(REBAR) -C rebar.config.lock skip_deps=true escriptize
 
 locked-deps:
 	@echo "Using rebar.config.lock file to fetch dependencies"
@@ -46,7 +47,7 @@ distclean: clean
 	@rm -rf basho_bench deps
 
 results:
-	Rscript --vanilla priv/summary.r -i tests/current
+	sudo Rscript --vanilla priv/summary.r -i tests/current
 
 ops_sec-results: results
 
