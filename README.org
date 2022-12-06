@@ -1,4 +1,14 @@
 * basho_bench
+** Relay Fork Build Notes
+   This fork makes some minimal changes to get basho_bench building on R16B01. We will not attempt to bring it up
+   to date with a modern version of Erlang.
+
+#+BEGIN_SRC shell
+$ ./rebar get-deps
+$ # Edit dep/pooler/rebar.confg: Remove rebar_lock_deps_plugin
+$ make locked-all
+#+END_SRC
+
 ** Overview
    [[http://travis-ci.org/basho/basho_bench][Travis-CI]] :: [[https://secure.travis-ci.org/basho/basho_bench.png]]
 
